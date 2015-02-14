@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.com.cassioliveira</groupId>
-    <artifactId>PainelgridEPanelGroup</artifactId>
+    <artifactId>DataPanels</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>PainelgridEPanelGroup</name>
+    <name>DataPanels</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
