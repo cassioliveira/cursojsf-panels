@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Paineis do JSF</title>
+    </h:head>
+    <h:body>
+        <h:form id="formulario">
+
+            <h:messages id="mensagem"/>
+
+
+            <h:outputLabel id="titulo" value="Formulário de cadastro de usuário" 
+                           style="font-weight: bold; text-align: center; font-size: 30px"/>
+
+            <h:panelGrid columns="2" border="0">
+
+                <h:panelGroup>
+                    <h:outputLabel id="nome" value="Nome*" />
+                    <h:inputText id="entradaNome" value="#{formularioBean.usuario.nome}" required="true"
+                                 requiredMessage="Digite um nome"/>
+                </h:panelGroup>
+                <h:outputLabel/>
+
+
+                <h:outputLabel id="sobrenome" value="Sobrenome" />
+                <h:inputText id="entradaSobrenome" value="#{formularioBean.usuario.sobrenome}"/>
+
+
+                <h:outputLabel id="senha" value="Senha" />
+                <h:inputSecret id="entradaSenha" value="#{formularioBean.usuario.senha}"/>
+                <h:outputLabel/>
+
+                <h:outputLabel/>
+                <h:commandButton id="botaoEnviar" value="Enviar" action="#{formularioBean.letrasMinusculas}"/>
+
+            </h:panelGrid>
+
+        </h:form>
+
+        <h:outputLabel value="Olá, #{formularioBean.usuario.nome} #{formularioBean.usuario.sobrenome}" 
+                       rendered="#{not empty formularioBean.usuario.nome}"/>
+        <br/>
+        <h:outputLabel value="Seu nome de usuário é #{formularioBean.nomeMinusculo}_#{formularioBean.sobrenomeMinusculo} e sua senha é: #{formularioBean.usuario.senha}" 
+                       rendered="#{not empty formularioBean.usuario.nome}"/>
+    </h:body>
+</html>
+
